@@ -27,7 +27,7 @@ public class ej4 {
             }
         }while(elige!=3);
 
-    }
+    }//cosas
 
     public static void showMenu(){
         System.out.println("Pulse 1 para pasar de euro a dolar ");
