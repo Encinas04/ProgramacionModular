@@ -1,3 +1,5 @@
+package Tema3;
+
 import java.util.Scanner;
 
 public class Ej2 {
