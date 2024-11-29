@@ -17,8 +17,9 @@ public class Ej5 {
     }
 
     public static void tablaMultiplicar(int numero){
-
+        System.out.println("La tabla de multiplicar es: ");
         for (int i=0;i!=11;i++){
+
             System.out.println(numero+" * "+i+" = "+numero*i);
         }
     }

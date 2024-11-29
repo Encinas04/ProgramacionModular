@@ -20,9 +20,11 @@ public class ej3 {
             return false;
         }
     }
+
     public static double calculateCirclePerimeter(int radius){
         return 2*3.14*radius;
     }
+
     public static double calculateCircleArea(int radius){
         return 3.14*(5*5);
     }

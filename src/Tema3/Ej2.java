@@ -7,10 +7,10 @@ public class Ej2 {
         Scanner scan=new Scanner(System.in);
         System.out.println("Escribe la edad");
         int edad= scan.nextInt();
-        boolean mayor=isAdult(edad);
-        if (mayor==true){
+        boolean mayor = isAdult(edad);
+        if (mayor == true) {
             System.out.println("Es mayor de edad");
-        }else{
+        } else {
             System.out.println("Es menor de edad");
         }
 
