@@ -1,4 +1,4 @@
-package Tema3;
+package Tema3.Acti1;
 
 public class Ej6 {
     public static void main(String[]args){

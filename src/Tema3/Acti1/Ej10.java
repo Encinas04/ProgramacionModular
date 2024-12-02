@@ -1,4 +1,4 @@
-package Tema3;
+package Tema3.Acti1;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ public class Ej10 {
                 case "b":
                     System.out.println("Ingrese la edad: ");
                     int edad= scan.nextInt();
-                    boolean esmayor=Ej2.isAdult(edad);
+                    boolean esmayor= Ej2.isAdult(edad);
                     if (esmayor==true){
                         System.out.println("Es mayor de edad\n");
                 }else{
@@ -35,7 +35,7 @@ public class Ej10 {
                 case "d":
                     System.out.println("ingrese el precio: ");
                     double precio= scan.nextDouble();
-                    System.out.println("En dolares es"+ej4.euro2dollar(precio)+"\n");
+                    System.out.println("En dolares es"+ ej4.euro2dollar(precio)+"\n");
 
                     System.out.println("En euros es "+ej4.dollar2euro(precio)+"\n");
 
