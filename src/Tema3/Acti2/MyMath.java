@@ -117,9 +117,13 @@ public class MyMath {
             return 0;
         }
     }
-    public static int sumaDigitos(int num){
-        return 0;
+    public static int sumDigitos(int num){
+        int sum=0;
+        while(num>0){
+            sum=sum+num%10;
+            num=num/10;
+        }
+        return sum;
     }
-
 
 }
