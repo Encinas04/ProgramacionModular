@@ -31,6 +31,8 @@ public class MyMath {
     double area=PI*4*4;
     return area;
     }
+
+
     public static boolean siPrimo(int num){
         if(num<=1){
             return false;
@@ -44,16 +46,8 @@ public class MyMath {
         return true;
     }
     public static boolean noPrimo(int num){
-        if(num<=1){
-            return true;
-        } else {
-            for (int i=2; i<num;i++){
-                if (num%i==0){
-                    return true;
-                }
-            }
-        }
-        return false;
+        return !siPrimo(num);
+
     }
     public static int numDigitos(int num){
         int i=0;
@@ -100,12 +94,12 @@ public class MyMath {
         }
         return total;
     }
+    //revisar
     public static int factorialRecursiva(int num){
-        int total=1;
-        for(int i = num; i>=1; i--){
-            total=total*i;
-        }
-        return total;
+       if(num==0||num==1){
+           return 1;
+       }
+       return num*factorial(num-1);
     }
     public static int solucionesSegundoGrado(int a, int b, int c) {
         int D = (b * b) - (4 * a * c);

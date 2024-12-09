@@ -25,7 +25,7 @@ public class Ej7 {
 
     }
     public static boolean primo(int numero){
-
+        //revisar
        for (int i=2;i<=numero;i++){
            if (numero%i==0){
                return false;

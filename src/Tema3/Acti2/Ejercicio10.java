@@ -64,21 +64,55 @@ public class Ejercicio10 {
 
                     break;
                 case 2:
+                    System.out.println("Inserte el numero: ");
+                    int numero= scan.nextInt();
+                    if (MyMath.siPrimo(numero)==true){
+                        System.out.println("El numero es primo ");
+                    }else if(MyMath.noPrimo(numero)==true){
+                        System.out.println("El numero no es primo ");
+                    }
                     break;
                 case 3:
+                    System.out.println("Inserte el numero: ");
+                    int num= scan.nextInt();
+                    System.out.println("El numero de digitos son: "+MyMath.numDigitos(num));
                     break;
                 case 4:
+                    System.out.println("Inserte el numero: ");
+                    int numPar= scan.nextInt();
+                    System.out.println("El numero de digitos pares son: "+MyMath.numPares(numPar));
                     break;
                 case 5:
+                    System.out.println("Inserte el numero: ");
+                    int numImpar= scan.nextInt();
+                    System.out.println("El numero de digitos impares son: "+MyMath.numImpares(numImpar));
                     break;
                 case 6:
+                    System.out.println("Inserte el numero: ");
+                    int numFactor= scan.nextInt();
+                    System.out.println("El L factorial es: "+MyMath.factorial(numFactor));
                     break;
                 case 7:
+                    System.out.println("Inserte el numero: ");
+                    int numRecur= scan.nextInt();
+                    System.out.println("El factorial en recursiva es: "+MyMath.factorialRecursiva(numRecur));
                     break;
                 case 8:
+                    System.out.println("Inserte el numero: ");
+                    int a= scan.nextInt();
+                    System.out.println("Inserte el numero: ");
+                    int b= scan.nextInt();
+                    System.out.println("Inserte el numero: ");
+                    int c= scan.nextInt();
+                    System.out.println("Las soluciones de la equacion 2 grado son: "+MyMath.solucionesSegundoGrado(a,b,c));
                     break;
+
                 case 9:
+                    System.out.println("Inserte el numero: ");
+                    int numDigitos= scan.nextInt();
+                    System.out.println("La suma de los digitos son: "+MyMath.sumDigitos(numDigitos));
                     break;
+
                 case 10:
                     salir=true;
                     break;

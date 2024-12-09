@@ -30,8 +30,14 @@ public class Utils {
         int moneda2cts=0;
         int moneda1cts=0;
         do {
-            if (euros>2){
+            if (euros>=2.0){
                 moneda2euros++;
+            } else if (euros>=1.0) {
+                moneda1euros++;
+            } else if (euros>=0.5) {
+                moneda50cts++;
+            } else if (euros>=0.20) {
+                 moneda20cts++;
             }
         }while(euros==0);
         return (moneda2euros);
