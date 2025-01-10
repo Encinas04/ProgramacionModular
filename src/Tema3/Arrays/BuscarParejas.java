@@ -1,84 +1,66 @@
 package Tema3.Arrays;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
 public class BuscarParejas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[] animales = {"León", "Mandril", "Suricata", "Facóquero", "Elefante", "Cebra", "Jirafa", "Hipopótamo", "Rinoceronte", "Tigre"};
-        String[] tablero = new String[20];
+        String[] animales = {"León", "Mandril", "Suricata", "Facóquero", "Elefante", "Cebra", "Jirafa", "Hipopótamo", "Rinoceronte", "Tigre","León", "Mandril", "Suricata", "Facóquero", "Elefante", "Cebra", "Jirafa", "Hipopótamo", "Rinoceronte", "Tigre"};
+        String[] tablero = {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x",};
         boolean[] visibles = new boolean[20];
-        int parejaCount = 10;
+        aleatorio(animales);
+        resultado(animales, visibles, tablero);
+
+        aleatorio(animales);
+    }
+
+    public static void aleatorio(String[] animales){
         Random rand = new Random();
-
-
-        for (int i = 0; i < parejaCount; i++) {
-            int animalIndex = rand.nextInt(animales.length);
-            String animal = animales[animalIndex];
-
-
-            int pos1, pos2;
-            do {
-                pos1 = rand.nextInt(20);
-            } while (tablero[pos1] != null);
-            tablero[pos1] = animal;
-
-            do {
-                pos2 = rand.nextInt(20);
-            } while (tablero[pos2] != null);
-            tablero[pos2] = animal;
+        for (int i =0;i< animales.length;i++){
+            int j= rand.nextInt(animales.length);
+            String temp=animales[i];
+            animales[i]=animales[j];
+            animales[j]=temp;
         }
-
-        while (true) {
-            System.out.println("\nTablero actual (invisible = X):");
-            mostrarTablero(tablero, visibles);
-
-            System.out.println("\nSeleccione dos posiciones (1-20):");
-            System.out.print("Primera posición: ");
-            int pos1 = scanner.nextInt() - 1;
-            System.out.print("Segunda posición: ");
-            int pos2 = scanner.nextInt() - 1;
-
-            if (pos1 < 0 || pos1 >= 20 || pos2 < 0 || pos2 >= 20 || pos1 == pos2) {
-                System.out.println("Posiciones inválidas. Intente nuevamente.");
-                continue;
-            }
-
-            if (tablero[pos1].equals(tablero[pos2])) {
-                System.out.println("¡Pareja encontrada! " + tablero[pos1] + " en posiciones " + (pos1 + 1) + " y " + (pos2 + 1));
-                visibles[pos1] = true;
-                visibles[pos2] = true;
-            } else {
-                System.out.println("No es una pareja. Intente nuevamente.");
-            }
-
-            if (todasLasParejasDescubiertas(visibles)) {
-                System.out.println("\n¡Felicidades, has encontrado todas las parejas!");
-                break;
-            }
-        }
-        scanner.close();
     }
 
-    public static void mostrarTablero(String[] tablero, boolean[] visibles) {
-        for (int i = 0; i < tablero.length; i++) {
-            if (visibles[i]) {
-                System.out.print(tablero[i] + " ");
-            } else {
-                System.out.print("X ");
-            }
-        }
-        System.out.println();
-    }
 
-    public static boolean todasLasParejasDescubiertas(boolean[] visibles) {
-        for (int i = 0; i < visibles.length; i++) {
-            if (!visibles[i]) {
-                return false;
+    public static void resultado(String[] animales, boolean[] visibles,String[] tablero){
+        Scanner scanner = new Scanner(System.in);
+        int numero1=-1;
+        int numero2=-1;
+        boolean acabarjuego=false;
+        int parejaCount = 0;
+
+        while(!acabarjuego){
+            System.out.println("El tablero actual es=");
+            for (int i=0;i<tablero.length;i++){
+                System.out.print(tablero[i]+" ");
             }
+            System.out.println("");
+            System.out.println("escriba el primer numero del 1 al 20");
+            numero1= scanner.nextInt()-1;
+            System.out.println("Escriba el segundo numero del 1 al 20");
+            numero2= scanner.nextInt()-1;
+
+            if (animales[numero1].equals(animales[numero2])){
+                System.out.println("ACERTASTE LA PAREJA!!");
+                tablero[numero1]=animales[numero1];
+                tablero[numero2]=animales[numero2];
+                parejaCount++;
+            }else{
+                System.out.println("fallaste!!");
+            }
+           if (parejaCount==10){
+               System.out.println("Felicidades, acabaste el juego");
+               acabarjuego=true;
+           }
+
         }
-        return true;
+
+
     }
 }
 
