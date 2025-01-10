@@ -38,10 +38,17 @@ public class Buscaminas {
             }
             System.out.println("Ingrese la  del 1 al 20: ");
             eleccion= scan.nextInt()-1;
+
             if (tablero[eleccion]==-1){
                 System.out.println("Has perdido!!!!");
             }else{
-
+                if (tablero[eleccion - 1] == -1 && tablero[eleccion + 1] == -1){
+                    tablero[eleccion]=+2;
+                } else if (tablero[eleccion-1]==-1) {
+                    tablero[eleccion]=+1;
+                } else if (tablero[eleccion+1]==-1) {
+                    tablero[eleccion]=+1;
+                }
             }
         }
     }
