@@ -41,7 +41,7 @@ public class Buscaminas {
             if (tablero[eleccion]==-1){
                 System.out.println("Has perdido!!!!");
             }else{
-                mostrar[]
+
             }
         }
     }
