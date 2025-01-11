@@ -20,7 +20,16 @@ public class SimulacionWifiHotel {
             }
         }
 
-        for (int i = 0; i < 20; i++) {
+        colocacion(habitaciones, habitacion, potencia);
+
+        System.out.println("\nEstado de la señal en las habitaciones:");
+        for (int i = 0; i < habitaciones.length; i++) {
+            System.out.print(habitaciones[i] + " ");
+        }
+    }
+
+    public static void colocacion(int[] habitaciones, int habitacion, int potencia) {
+        for (int i = 0; i < habitaciones.length; i++) {
             habitaciones[i] = 0;
         }
 
@@ -30,17 +39,9 @@ public class SimulacionWifiHotel {
             if (habitacion - i >= 0) {
                 habitaciones[habitacion - i] = potencia - i;
             }
-            if (habitacion + i < 20) {
+            if (habitacion + i < habitaciones.length) {
                 habitaciones[habitacion + i] = potencia - i;
             }
         }
-
-        System.out.println("\nEstado de la señal en las habitaciones:");
-
-        for (int i = 0; i < habitaciones.length; i++) {
-            System.out.print(habitaciones[i] + " ");
-        }
-
     }
 }
-
