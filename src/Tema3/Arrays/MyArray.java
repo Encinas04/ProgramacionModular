@@ -10,8 +10,8 @@ public class MyArray {
     public static void main(String[] args) {
 
 
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; // Array por defecto
-        int[] array2 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1}; // Segundo array por defecto
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] array2 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         menu(array, array2);
     }
     public static void menu(int[] array, int[] array2){
