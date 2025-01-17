@@ -8,7 +8,6 @@ import java.util.Scanner;
             int filas = 12;
             int columnas = 5;
             int[][] hotel = new int[filas][columnas];
-
             int planta = -1;
             int habitacion = -1;
             int potencia = -1;

@@ -1,3 +1,5 @@
+package Tema3.Matrices;
+
 import java.util.Random;
 import java.util.Scanner;
 
