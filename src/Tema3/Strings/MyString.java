@@ -24,11 +24,25 @@ public class MyString {
         }
         return vocales;
     }
+
     public static String largo( String cadena){
         String largo="";
-        for (int i=0;i<cadena.length();i++){
-
+        String[] palabra =cadena.split(" ");
+        for (int i=0;i<palabra.length;i++){
+            if (palabra[i].length()>largo.length()){
+                largo=palabra[i];
+            }
         }
+        return largo;
+    }
+    public static int contiene(String cadena, String cadena2){
+        int contador=0;
+        int indice=0;
+        while((indice=cadena.indexOf(cadena2,indice))!=1){
+            contador++;
+            indice+=cadena2.length();
+        }
+        return contador;
     }
 
 
