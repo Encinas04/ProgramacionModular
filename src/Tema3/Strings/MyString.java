@@ -4,7 +4,7 @@ public class MyString {
     public static void main(String[]args){
         String cadena="paquito elcocas";
         String cadena2="pacopaquito";
-        System.out.println(vocales(cadena));
+        System.out.println(contarPalabras(cadena));
     }
     public static String invertir(String cadena){
         String invertido="";
@@ -44,7 +44,50 @@ public class MyString {
         }
         return contador;
     }
+    public static int contarPalabras(String cadena) {
+        String[] palabras = cadena.trim().split("\\s+");
+        return palabras.length;
+    }
+    public static String formatearTelefono(String telefono) {
+        String prefijo = telefono.substring(0, 3);
+        String parte1 = telefono.substring(3, 6);
+        String parte2 = telefono.substring(6);
+        String resultado=( prefijo+"-"+parte1+"-"+parte2);
+        return resultado;
+    }
 
+
+        public static void mostrarHistogramaVocales(String cadena) {
+            cadena = cadena.toLowerCase();
+            int[] frecuencias = new int[5];
+            for (int i = 0; i < cadena.length(); i++) {
+                char c = cadena.charAt(i);
+                switch (c) {
+                    case 'a':
+                        frecuencias[0]++;
+                        break;
+                    case 'e':
+                        frecuencias[1]++;
+                        break;
+                    case 'i':
+                        frecuencias[2]++;
+                        break;
+                    case 'o':
+                        frecuencias[3]++;
+                        break;
+                    case 'u':
+                        frecuencias[4]++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            System.out.println("a " + frecuencias[0] + " " + "*".repeat(frecuencias[0]));
+            System.out.println("e " + frecuencias[1] + " " + "*".repeat(frecuencias[1]));
+            System.out.println("i " + frecuencias[2] + " " + "*".repeat(frecuencias[2]));
+            System.out.println("o " + frecuencias[3] + " " + "*".repeat(frecuencias[3]));
+            System.out.println("u " + frecuencias[4] + " " + "*".repeat(frecuencias[4]));
+        }
 
 
 }
