@@ -1,4 +1,4 @@
-package Tema4;
+package Tema4.POO1;
 
 public class Reloj {
     private int hora;
@@ -20,6 +20,7 @@ public class Reloj {
     }
     public int getHora(){
         return hora;
+
     }
 
     public void setHora(int hora){
@@ -47,5 +48,29 @@ public class Reloj {
         }else{
             System.out.println("Minutos no validos, por favor ingrese de 0 a 59 minutos");
         }
+    }
+    public int getSegundo(){
+        return segundo;
+    }
+    public void setSegundo(int segundo){
+        if (segundo>=0&& segundo<=59){
+            this.segundo=segundo;
+        }else{
+            System.out.println("Segundos no validos, por favor ingrese de 0 a 59 segundos");
+        }
+    }
+    public static void main(String[]args){
+    Reloj reloj=new Reloj(10,30,15);
+    reloj.mostrarHora();
+    }
+
+    public String toString() {
+        return hora + ":" + minuto + ":" + segundo;
+    }
+
+    public void mostrarHora(){
+        System.out.println(hora+":"+minuto+":"+segundo);
+        System.out.println(this);
+
     }
 }
