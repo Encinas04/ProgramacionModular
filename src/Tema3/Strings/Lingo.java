@@ -47,11 +47,11 @@ public class Lingo {
             char letraSecreta = palabraSecreta.charAt(i);
 
             if (letraIntento == letraSecreta) {
-                resultado += '*';
+                resultado += letraIntento;
             } else if (esLetraEnPalabra(letraIntento, palabraSecreta)) {
-                resultado += '-';
+                resultado += '*';
             } else {
-                resultado += ' ';
+                resultado += '-';
             }
         }
         return resultado;

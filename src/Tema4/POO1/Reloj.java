@@ -59,17 +59,23 @@ public class Reloj {
             System.out.println("Segundos no validos, por favor ingrese de 0 a 59 segundos");
         }
     }
-    public static void main(String[]args){
-    Reloj reloj=new Reloj(10,30,15);
-    reloj.mostrarHora();
-    }
+
 
     public String toString() {
-        return hora + ":" + minuto + ":" + segundo;
+        if (!horas12){
+            return hora + ":" + minuto + ":" + segundo;
+        }else{
+            if (hora<=12){
+                return hora + ":" + minuto + ":" + segundo;
+            }else{
+                return (hora-12)+":"+minuto+":"+segundo;
+            }
+        }
+
+
     }
 
     public void mostrarHora(){
-        System.out.println(hora+":"+minuto+":"+segundo);
         System.out.println(this);
 
     }

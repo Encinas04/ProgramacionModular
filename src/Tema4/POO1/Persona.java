@@ -2,7 +2,7 @@ package Tema4.POO1;
 import java.util.Scanner;
 
 public class Persona {
-    private final String dni;
+    private final String dni="38695820A";
     private String nombre;
     private String apellidos;
     private int edad;
@@ -10,7 +10,6 @@ public class Persona {
     private int retiredAge;
 
     public Persona(String dni,String nombre, String apellidos,int edad){
-        this.dni=dni;
         this.nombre=nombre;
         this.apellidos=apellidos;
         this.edad=edad;
@@ -123,5 +122,15 @@ public class Persona {
         }
         return resultado;
     }
+
+    public void chekDni(){
+        if (dni.length()<9){
+            System.out.println("El dni es muy corto");
+
+        }else{
+            System.out.println("");
+        }
+    }
+
 
 }
