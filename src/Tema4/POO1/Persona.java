@@ -2,7 +2,7 @@ package Tema4.POO1;
 import java.util.Scanner;
 
 public class Persona {
-    private final String dni="38695820A";
+    private static final String dni="38695820A";
     private String nombre;
     private String apellidos;
     private int edad;
@@ -124,11 +124,24 @@ public class Persona {
     }
 
     public void chekDni(){
-        if (dni.length()<9){
+        if (dni.length()<9||dni.length()>9){
             System.out.println("El dni es muy corto");
 
         }else{
-            System.out.println("");
+            char ultimoCaracter=dni.charAt(dni.length()-1);
+            if (ultimoCaracter == 'A' || ultimoCaracter == 'B' || ultimoCaracter == 'C' ||
+                    ultimoCaracter == 'D' || ultimoCaracter == 'E' || ultimoCaracter == 'F' ||
+                    ultimoCaracter == 'G' || ultimoCaracter == 'H' || ultimoCaracter == 'I' ||
+                    ultimoCaracter == 'J' || ultimoCaracter == 'K' || ultimoCaracter == 'L' ||
+                    ultimoCaracter == 'M' || ultimoCaracter == 'N' || ultimoCaracter == 'O' ||
+                    ultimoCaracter == 'P' || ultimoCaracter == 'Q' || ultimoCaracter == 'R' ||
+                    ultimoCaracter == 'S' || ultimoCaracter == 'T' || ultimoCaracter == 'U' ||
+                    ultimoCaracter == 'V' || ultimoCaracter == 'W' || ultimoCaracter == 'X' ||
+                    ultimoCaracter == 'Y' || ultimoCaracter == 'Z') {
+                System.out.println("El dni es correcto");
+            } else {
+                System.out.println("El DNI no termina con una letra del abecedario.");
+            }
         }
     }
 
