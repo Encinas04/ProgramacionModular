@@ -75,14 +75,33 @@ public class Hero {
         this.defense = defense;
     }
 
-    public void drinkPotion(int health){
+    public void drinkPotion(){
         this.health+=10;
     }
-    public void rest(int health){
+    public void rest(){
         this.health+=50;
     }
     public String toString(){
-        return name+""+level+""+health+"/"+maxHealth+""+experience+""+attack+""+defense;
+        return "Hero{name='" + name + "', level=" + level + ", health=" + health + "/" + maxHealth +
+                ", experience=" + experience + ", attack=" + attack + ", defense=" + defense + "}";
     }
+
+    public void attack(Hero target){
+        int damage = Math.max(this.attack - target.defense, 10);
+        target.health = Math.max(target.health - damage, 0);
+        this.experience+=10;
+
+        if (this.experience>=50){
+            levelUp();
+            this.experience-=50;
+        }
+    }
+    public void levelUp() {
+        level++;
+        maxHealth += 5;
+        attack += 1;
+        defense += 1;
+    }
+
 
 }
